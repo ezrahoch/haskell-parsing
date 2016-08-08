@@ -42,6 +42,8 @@ instance Alternative Parser where
         \s -> case px s of
             Left _ -> py s
             Right r -> Right r
+    some v = (:) <$> v <*> many v
+    many v = some v <|> pure []
 
 parseChar :: Parser Char
 parseChar = Parser $ \case
