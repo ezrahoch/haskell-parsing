@@ -6,9 +6,10 @@ import Parser
 main :: IO()
 main = putStrLn "\\o/"
 
-data Expression = Value Int
-                | Sum [Expression]
-                | Mul [Expression]
+data Expression
+    = Value Int
+    | Sum [Expression]
+    | Mul [Expression]
     deriving (Show)
 
 parseExpressionVal :: Parser Expression
